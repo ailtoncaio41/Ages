@@ -1,0 +1,27 @@
+political_decisions = {
+	       
+        industry_investiment = {
+		
+		potential {
+		 NOT = {has_country_modifier = industry_investiment
+		 industrial_score = 250}
+		 OR = {economic_policy = "state_capitalist"
+		       economic_policy = "interventionism"
+		 civilized = yes
+		 }
+		}
+		allow ={
+		practical_steam_engine = 1
+		interchangeable_parts  = 1
+		stock_exchange = 1
+		ad_hoc_money_bill_printing = 1
+		late_classical_theory = 1
+		market_structure = 1
+		}
+		
+		effect = {		
+		add_country_modifier = {name = industry_investiment duration = -1}
+		}
+		}		
+		
+    }

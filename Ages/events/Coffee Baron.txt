@@ -1,0 +1,27 @@
+country_event = {
+
+         id = 1000000
+         title = "Coffe Barons"
+		 desc = "Coffee is what keeps our economy alive"
+		 picture = "CoffeeBarons"
+		 
+         trigger = {
+		 tag = BRZ
+		 NOT = {any_owned_province = {
+		 has_province_modifier = coffee_barons
+		 }
+		 }
+				}
+         	
+         option = {
+		           name = "The reign of the Coffee Barons"
+		           any_owned = {
+				       limit = { trade_goods = coffee				   
+					   }
+				   add_province_modifier = {name = coffee_barons duration = -1}
+				   }
+		 }
+
+
+
+}

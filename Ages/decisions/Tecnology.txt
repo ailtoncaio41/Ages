@@ -1,0 +1,19 @@
+political_decisions = {
+           build_school's = {
+		   potential = {
+		   school_reforms = no_schools
+		   }
+		   allow = {
+		   functionalism = 1
+		   idealism = 1
+		   money = 100000
+		   }
+		   effect = {
+		   social_reform = low_schools
+		   money = -100000
+		   }
+		   }
+
+
+
+}

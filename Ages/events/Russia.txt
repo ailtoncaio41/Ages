@@ -1,0 +1,41 @@
+country_event = {
+             Soviet_Union = {
+			       id = 1000007
+			       trigger = {
+				   tag = RUS
+				   year = 1917
+				   upper_house = {
+                                          ideology = communist
+                                          value = 0.4  
+			                     }
+				   title = "Communist Revolution"
+				   name = "Communists want to rule"
+				   }
+			 opition = {
+			 name = "Protect the Tsar at all costs"
+			 any_owned = {
+			 limit = {
+			 pop_majority_ideology = communist
+			 NOT = {province_id = 994}
+			 }
+			 secede_province = CCCP
+			 }
+			 CCCP = {
+			 capital = 1008
+			 leadership = 100
+			 }
+			 war = {
+			  target = CCCP
+			  attacker_goal = {
+				casus_belli = civil_war
+			}
+			
+			defender_goal = {
+				casus_belli = civil_war
+			}
+			 }
+			 }
+			 }
+
+
+}

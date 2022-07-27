@@ -1,0 +1,22 @@
+political_decisions = {
+          open_borders = {
+		         potential = {
+				 nationalism_n_imperialism = 1				 
+				 }
+		          allow = {
+				  freedom_of_trade = 1
+				  ruling_party_ideology = liberal
+				  slavery = no_slavery
+				  citizenship_policy = full_citizenship
+				  }
+				  effect = {add_country_modifier = {name = open_borders duration -1}
+				  any_pop = {
+					  scaled_militancy = {
+					  issue = residency
+					  factor = 4
+					  }
+				  }
+		  }
+        }
+
+}

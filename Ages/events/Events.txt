@@ -1,0 +1,122 @@
+country_event = {
+ id = 1000002
+ title = "Removing Industrial Investment"
+ desc = "It's time to remove industrial investment and transfer the money to another investment"
+ 
+ trigger = {
+         has_country_modifier = industry_investiment
+		 industrial_score = 250
+ }
+ 
+ option = {
+        name = "Our industries can stand on their own"
+		remove_country_modifier = industry_investiment
+ }
+
+}
+
+country_event = {
+id = 1000003
+title = "Rural Country"
+desc = "Its industrial level is non-existent"
+
+trigger = {
+        NOT = {
+		industrial_score = 10
+		
+		OR = {
+		has_country_modifier = rural_country
+		has_country_modifier = tiny_industrial
+	    has_country_modifier = medium_industrial
+		}
+		}
+}
+ option = {
+ name = "Life on the Farm"
+          add_country_modifier = {name = rural_country duration = -1}
+ }
+}
+
+country_event = {
+id = 1000004
+title = "Tiny Industrial Country"
+desc = "Your Industrial level is Tiny"
+
+trigger = {
+industrial_score = 10
+      NOT = {
+	  industrial_score = 50
+	  OR = {
+	  has_country_modifier = tiny_industrial
+	  has_country_modifier = medium_industrial
+	  }
+	  }
+	  }
+	  
+	  option = {
+	  name = "Industrial birth"
+	  remove_country_modifier = rural_country
+	  add_country_modifier = {name = tiny_industrial duration = -1}
+	  }
+
+
+}
+
+country_event = {
+id = 1000006
+title = "Medium Industrial Country"
+desc = "Your industry level is Medium"
+
+trigger = {
+industrial_score = 50
+NOT = {
+industrial_score = 100
+OR = {
+	    has_country_modifier = medium_industrial
+}
+}
+}
+
+option = {
+remove_country_modifier = tiny_industrial
+add_country_modifier = {name = medium_industrial duration -1}
+}
+}
+
+country_event = {
+id = 1000008
+title = "Talking to the Great Powers"
+desc = "A power has decided to intervene diplomatically in your favor, in exchange it wants a small gift"
+
+trigger = {
+		   ai = no
+		   has_country_modifier = diplomatic_investiment
+}
+mean_time_to_happen =  {
+	months = 6
+}
+
+option = {
+name = "We accept to give this little gift"
+         random_country = {
+				   limit = {is_greater_power = yes
+				   }
+	              money = 100000
+				  }
+				  money = -100000
+				  badboy = -5
+}
+
+option = {
+name = "Gifts are not in the budget"
+random_country = {
+				   limit = {is_greater_power = yes
+				   }
+	              relation = {
+				   who = THIS
+				   value = -25
+				  }
+				  }
+}
+}
+

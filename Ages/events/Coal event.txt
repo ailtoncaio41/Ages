@@ -1,0 +1,16 @@
+province_event = {
+id = 1000005
+trigger = {
+        industrial_score = 30
+        year = 1860
+        or = {province_id = 2464}
+        not = {trade_goods = coal}
+		}
+		title = "$PROVINCENAME$ charge to Coal Mine"
+ desc = "with an increase in demand from industries we went looking for primary materials in our territories and in the province of $PROVINCENAME$ coal found, should we change the current production of the province to coal?"
+		option = {
+		name = "$PROVINCENAME$ charge your good production to coal"		
+        trade_goods = coal
+}
+
+}
